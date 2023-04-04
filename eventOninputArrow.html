@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title> Evento Oninput e Arrow </title>
+</head>
+<body>
+    <header><h2> Evento oninput </h2></header>
+    <section>
+        <p> Escreva uma mensagem no campo abaixo: </p>
+        <input type="text" id="teste" oninput="mensagem()">
+        <p id="write">  </p>
+    </section>
+    <hr>
+    <h2> Eventos arrow </h2>
+    <section>
+        <p><h3> A função arrow torna mais curto a sintaxe </h3></p>
+        <p> Digite o primeiro número: <input type="number" id="n1"></p>
+        <p> Digite o segundo número: <input type="number" id="n2"></p>
+        <button type="button" onclick="testeArrow()"> Calcular </button>
+        <p> A multiplicação é: <div id="arrow">  </div></p>
+    </section>
+    <hr>
+    <script>
+        // Script do evento oninput
+        function mensagem(){
+            let wrote = document.getElementById("teste").value
+            document.getElementById("write").innerHTML = wrote
+        }
+
+        // Script do evento arrow
+        function testeArrow(){
+            let val1 = document.getElementById("n1").value
+            let val2 = document.getElementById("n2").value 
+
+            let mult = (val1, val2) => (val1 * val2)
+            document.getElementById("arrow").innerHTML = mult(val1, val2)
+        }
+    </script>
+</body>
+</html>
